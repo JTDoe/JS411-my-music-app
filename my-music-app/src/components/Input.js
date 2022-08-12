@@ -6,13 +6,10 @@ export default function Input(props) {
   return (
     <Box
       component="form"
-      sx={{
-        "& > :not(style)": { m: 1, width: "25ch" },
-      }}
-      noValidate
-      autoComplete="off"
+
     >
       <TextField
+        margin="none"
         required
         id={props.id}
         label={props.label}

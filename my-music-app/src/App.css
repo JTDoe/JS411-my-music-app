@@ -5,15 +5,30 @@ body {
 
 .App {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.button {
-  margin-left: 8px;
+  width: 100%;
+  height: calc(100vh - 64px);
 }
 
 .form {
   width: 200px;
+  margin: 0 auto;
+  align-self: center;
+}
+
+.form input {
+  width: 200px;
+}
+
+.form .button {
+  margin-top: 8px;
+  width: 200px;
+}
+
+.card-title-container {
+  margin-top: 16px;
+}
+
+.dashboard-containter {
+margin-top:64px;
+margin-left: 128px;
 }
