@@ -6,14 +6,21 @@ import CustomCard from "./components/customCard";
 import "./App.css";
 import Switch from "@mui/material/Switch";
 import Slider from "@mui/material/Slider";
+import { Select } from "@mui/material";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isToggled, setIsToggled] = useState(false);
+  const [volume, setVolume] = useState(true);
+  const [quality, setQuality] = useState("");
 
   useEffect(() => {
     console.log(isToggled);
   }, [isToggled]);
+
+  useEffect(() => {
+    console.log(volume);
+  }, [volume]);
 
   return (
     <main>
@@ -35,20 +42,32 @@ function App() {
           <div className="dashboard-container">
             <h2>Welcome User!</h2>
             {/* // This is where we will put our cards */}
-            <CustomCard
-              state={isToggled}
-              setState={setIsToggled}
-              title="Online Mode"
-              body=" Is this application connected to the internet?"
-              component={Switch}
-            />
-            <CustomCard
-              state={isToggled}
-              setState={setIsToggled}
-              title="Master Volume"
-              body=" Is this application connected to the internet?"
-              component={Slider}
-            />
+            <div className="Cards">
+              <CustomCard
+                className="OnlineMode"
+                state={isToggled}
+                setState={setIsToggled}
+                title="Online Mode"
+                body=" Is this application connected to the internet?"
+                component={Switch}
+              />
+              <CustomCard
+                className="MasterVolume"
+                state={volume}
+                setState={setVolume}
+                title="Master Volume"
+                body="Overrides all other sound settings in this application"
+                component={Slider}
+              />
+              <CustomCard
+                className="SoundQuality"
+                state={quality}
+                setState={setQuality}
+                title="Sound Quality"
+                body="Manually control the music quality in event of poor connection"
+                component={Select}
+              />
+            </div>
             <h4>System Notifications:</h4>
             {isToggled === true && (
               <span>
