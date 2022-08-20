@@ -29,17 +29,20 @@ body {
   margin-top: 16px;
 }
 
-.dashboard-containter {
-margin-top:64px;
+div.dashboard-containter {
+margin-top: 64px;
 margin-left: 128px;
 }
 
 .Cards {
-  display: flex;
-  flex-direction: row;
-
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
 }
 
 h4 {
   font-size: 25px;
+}
+
+#root > main > div.App > div > div > div:nth-child(2) {
+  margin-right: 12px;
 }
