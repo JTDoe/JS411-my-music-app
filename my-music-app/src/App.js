@@ -72,13 +72,13 @@ function App() {
                 stream music to other devices.
               </span>
             )}
-            {setVolume > 60 && (
+            {volume > 60 && (
               <span>
                 Listening to music at a high volume could cause long-term
                 hearing loss.
               </span>
             )}
-            {setQuality === 10 && (
+            {quality === 10 && (
               <span>
                 Music quality is degraded. Increase quality if your connection
                 allows it.

@@ -9,7 +9,7 @@ export default function BasicSelect(props) {
   const { quality, setQuality } = props;
 
   const handleChange = (event) => {
-    setQuality(event.target.value);
+    quality(event.target.value);
   };
 
   return (
