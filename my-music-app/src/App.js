@@ -5,20 +5,17 @@ import Button from "@mui/material/Button";
 import CustomCard from "./components/customCard";
 import "./App.css";
 import Switch from "@mui/material/Switch";
-// import Slider from "@mui/material/Slider";
-// import { Select } from "@mui/material";
+
 import ContinuousSlider from "./components/VolumeSlider";
 import BasicSelect from "./components/Quality";
+
+console.clear();
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isToggled, setIsToggled] = useState(false);
-  const [volume, setVolume] = useState({});
-  const [quality, setQuality] = useState(20);
-
-  // useEffect(() => {
-  //   console.log(isToggled);
-  // }, [isToggled]);
+  const [volume, setVolume] = useState(30);
+  const [quality, setQuality] = useState(2);
 
   return (
     <main>
@@ -72,13 +69,15 @@ function App() {
                 stream music to other devices.
               </span>
             )}
-            {volume > 60 && (
+               <br></br>
+            {volume >= 80 && (
               <span>
                 Listening to music at a high volume could cause long-term
                 hearing loss.
               </span>
             )}
-            {quality === 10 && (
+            <br></br>
+            {quality <= 2 && (
               <span>
                 Music quality is degraded. Increase quality if your connection
                 allows it.

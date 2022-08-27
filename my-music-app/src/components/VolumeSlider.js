@@ -1,16 +1,21 @@
-import React, { useState, useEffect, Component } from "react";
+import * as React from "react";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 
 
-export default function ContinuousSlider(props) {
-  const { volume, setVolume } = props;
+export default function ContinuousSlider({ state, setState }) {
+  // const { volume, setVolume } = props;
+  
 
-  const handleSlide = (event) => {
-    volume(event.target.value);
-  }
+  // const handleChange = (event) => {
+  //   setVolume(event.target.value);
+  //   console.log("handlechange", volume);
+  //   console.log(volume)
+  // };
+
   return (
     <Box sx={{ width: 250 }}>
+
       <Slider
         aria-label="Small steps"
         defaultValue={10}
@@ -18,8 +23,11 @@ export default function ContinuousSlider(props) {
         marks={true}
         min={0}
         max={100}
-        onChange={handleSlide}
+        value={state}
+        onChange={(e) => setState(e.target.value)}
+       
       />
+     
     </Box>
   );
 }

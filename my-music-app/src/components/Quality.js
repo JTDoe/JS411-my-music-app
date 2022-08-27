@@ -6,10 +6,11 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
 export default function BasicSelect(props) {
-  const { quality, setQuality } = props;
+
 
   const handleChange = (event) => {
-    quality(event.target.value);
+    props.setState(event.target.value);
+    // console.log(quality)
   };
 
   return (
@@ -19,13 +20,13 @@ export default function BasicSelect(props) {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={quality}
           label="Quality"
-          onChange={handleChange}
+          value={props.state}
+          onClick={handleChange}
         >
-          <MenuItem value={10}>Low</MenuItem>
-          <MenuItem value={20}>Medium</MenuItem>
-          <MenuItem value={30}>High</MenuItem>
+          <MenuItem value={1}>Low</MenuItem>
+          <MenuItem value={2}>Medium</MenuItem>
+          <MenuItem value={3}>High</MenuItem>
         </Select>
       </FormControl>
     </Box>
